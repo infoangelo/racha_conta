@@ -1,0 +1,3 @@
+Feijão,10,750
+Arroz,5,1750
+Iorgute,3,550
