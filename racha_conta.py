@@ -28,14 +28,14 @@ def rachar_conta(compras, emails):
         for items in lista_compras:
             items = items.split(',')
             if (int(items[1]) < 0) or (int(items[2]) < 0):
-                raise InputError('A lista de compras contém algum valor inválido na quantidade ou no preço, por gentileza verifique!')
+                raise ValueError
             conta_soma += (int(items[1])*int(items[2]))
         conta_divisao_inteira = conta_soma // len(lista_emails)
         conta_resto_divisao = conta_soma % len(lista_emails)
         emails_conta_dividida = {}
         for email in lista_emails:
             if not re.fullmatch(r"^[\w.-]+@([\w-]+.)+[\w-]{2,}$", email):
-                raise InputError('Foi informado uma email inválido, por gentileza verifique a lista de emails')
+                raise InputError('Foi informado um email inválido, por gentileza verifique a lista de emails')
             if conta_resto_divisao > 0:
                 emails_conta_dividida[email] = conta_divisao_inteira + 1
                 conta_resto_divisao -= 1

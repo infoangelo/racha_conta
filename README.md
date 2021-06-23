@@ -19,7 +19,7 @@ email3@vaipagaraconta.com
 Depois que os arquivos estiverem criados, execute o seguinte comando:  
 *python racha_conta.py arquivo_lista_compras arquivo_emails*  
 
-Para que o comando acima funcione é necessário ter o Python instalado, o arquivo racha_conta.py deve está na mesma pasta que os arquivos com a lista de compras e o arquivo com a lista de emails, caso não esteja é necessário especificar o caminho dos arquivos e não esqueça de substituir o *arquivo_lista_compras* e *arquivo_emails* pelos nomes dos arquivos que você criou.  
+Para que o comando acima funcione é necessário ter o Python na versão 3 ou superior instalado, o arquivo racha_conta.py deve está na mesma pasta que os arquivos com a lista de compras e o arquivo com a lista de emails, caso não esteja é necessário especificar o caminho dos arquivos e não esqueça de substituir o *arquivo_lista_compras* e *arquivo_emails* pelos nomes dos arquivos que você criou.  
 
 O comando retornará um dicionário com o email e o valor em centavos que cada um deverá pagar, com os dados do exemplo acima o retorno seria:  
 
