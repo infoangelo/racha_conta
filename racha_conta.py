@@ -12,20 +12,23 @@ class InputError(Error):
 
 
 def rachar_conta(compras, emails):
+    conta_soma = 0
     try:
         compras = open(compras)
         emails = open(emails)
         lista_compras = compras.read()
         lista_emails = emails.read()
-        lista_emails = set(filter(None, lista_emails.split('\n')))
+        lista_emails = set(lista_emails.split())
         if len(lista_emails) == 0:
             raise InputError('Não foi encontrado nenhum email na lista, deve ser informado pelo menos um email!')
-        lista_compras = list(filter(None, lista_compras.split('\n')))
+        lista_compras = list(lista_compras.split())
         if len(lista_compras) == 0:
             raise InputError('Não foi encontrado nenhum item na lista de compras!')
-        conta_soma = 0
+
         for items in lista_compras:
             items = items.split(',')
+            if (int(items[1]) < 0) or (int(items[2]) < 0):
+                raise InputError('A lista de compras contém algum valor inválido na quantidade ou no preço, por gentileza verifique!')
             conta_soma += (int(items[1])*int(items[2]))
         conta_divisao_inteira = conta_soma // len(lista_emails)
         conta_resto_divisao = conta_soma % len(lista_emails)
